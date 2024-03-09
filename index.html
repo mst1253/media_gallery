@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="songs,music,videos,music gallery,music gallery,watch vides,listen">
+  <link rel="icon" href="./images/svgs/logoipsum-294.svg" typr="x-icon">
+  <title>Music player</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+  <dialog id="n">
+    <form method="dialog">
+        <input  class="media-name" type="text" placeholder="add a name" required>
+        <button class="add-name">add</button>
+    </form>
+  </dialog>
+ <div class="container">
+  <header>
+    <div class="search-bar">
+        <input  class="search-input" type="text" placeholder="search" />
+    </div>
+    <img src="./images/svgs/logoipsum-294.svg" alt="logo">
+  </header>
+  <div class="main-content">
+  <main>
+    <div class="main-header lazyloading">
+      <h1 data-text="the best experience is here">the best experience is here</h1>
+      <div class="music-time">
+        <div class="current-time videoCurrent_time">0:00</div>
+        <div class="range_time videoRange"></div>
+        <div class="duration-time videoDuration_time">0:00</div>
+        <i class="fa-solid fa-repeat large-screen"></i>
+       </div>
+         <div class="songs-control video-control">
+        <i class="fa-solid fa-backward playBackwardVideo"></i>
+        <i class="fa-regular fa-circle-play playBtnVideo"></i>
+        <i class="fa-regular fa-circle-pause pauseBtnVideo" style="display: none;"></i>
+        <i class="fa-solid fa-forward playForwardVideo"></i>
+     </div>
+    </div>
+    <div class="song-cards"></div>
+    <label for="audio" class="add_music"><i class="fa-solid fa-music"></i></label>
+    <input class="audioInput" type='file' id='audio' accept='audio/*' style='display:none' />
+    <div class="video-cards"></div>
+    <label for="video" class="add_videos"><i class="fa-solid fa-video"></i></label>
+    <input class="videoInput" type='file' id='video' accept='video/*' style='display:none' />
+  </main>
+    <aside>
+    <div class="images-container"></div>
+    <label for="images" class="add_images"><i class="fa-solid fa-images"></i></label>
+    <input class="imageInput" type='file' id='images' accept='image/*' style='display:none' />
+   </aside> 
+  </div>
+  <footer>
+    <div class="music-effec">
+      <div class="music-cycle"></div>
+      <div class="song-name">
+      <b>title</b>
+     </div>
+    </div>
+    <div class="songs-control">
+      <i class="fa-solid fa-backward playBackward"></i>
+      <i class="fa-regular fa-circle-play playBtn"></i>
+      <i class="fa-regular fa-circle-pause pauseBtn" style="display: none;"></i>
+      <i class="fa-solid fa-forward playForward"></i>
+   </div>
+   <div class="music-time">
+    <div class="current-time audioCurrent_time">0:00</div>
+    <div class="range_time audioRange"></div>
+    <div class="duration-time audioDuration_time">0:00</div>
+    <div class="song-repeat">
+        <i class="fa-solid fa-shuffle random_song"></i>
+     </div>
+   </div>
+   <div class="sound-control">
+    <i class="fa-solid fa-volume-xmark"></i>
+    <i>
+      <label for="sound-slider" class="slider"></label>
+      <input type="range"  value="0" id="sound-slider"/>
+    </i>
+    <i class="fa-solid fa-volume-high"></i>
+   </div>
+ </footer>
+ </div>
+ <script src="main.js"></script>
+</body>
+</html>
