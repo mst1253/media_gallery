@@ -45,7 +45,7 @@ const addImgToAudioCard=(cards,audio_cards)=>{
    card.onclick=()=>{
       let img=card.querySelector('img');
       let input=prompt('add the name of the audio card to set this image as a background!');
-    if(input!==null){
+    if(input){
       audio_cards.forEach(audioCard=>{
        let audio_name=audioCard.querySelector('.audioName');
         if(audio_name.textContent.trim().toLowerCase()===input.trim().toLowerCase()){audioCard.style.backgroundImage=`url(${img.src})`};
@@ -76,17 +76,17 @@ const  play_media=(media,durationTime,currentTime,range)=>{
   if(dSecond<10){
     dSecond=`0${dSecond}`;
   }
-  if(cSecond<10){
+  else if(cSecond<10){
     cSecond=`0${cSecond}`;
   }
- if(dMinute>59){
+ else if(dMinute>59){
     dMinute=`${Math.floor(dMinute/60)}:${Math.floor(dMinute%60)}`;
    
   }
-  if(cMinute>59){
+  else if(cMinute>59){
      cMinute=`${Math.floor(cMinute/60)}:${Math.floor(cMinute%60)}`;
   }
-  if(dMinute&&dSecond != NaN){
+  else if(dMinute&&dSecond != NaN){
     durationTime.textContent=`${dMinute}:${dSecond}`;
   }
    
@@ -117,15 +117,15 @@ const songs_control=(currentAudio,audios)=>{
         isPlaying=false;
     }
     else{
+      currentAudio.removeAttribute('autoplay',''); 
+      currentAudio.removeAttribute('loop','');
+      randomSong.style.color='rgb(197, 8, 97)';
+      isPlaying=true;
        currentAudio.addEventListener('ended',()=>{
            currentAudio.src=allAudios[Math.floor(Math.random() * allAudios.length)];
            currentAudio.load();
            currentAudio.play(); 
       })
-      currentAudio.removeAttribute('autoplay',''); 
-      currentAudio.removeAttribute('loop','');
-      randomSong.style.color='rgb(197, 8, 97)';
-      isPlaying=true;
     }
   }
   
@@ -154,9 +154,9 @@ const add_music=()=>{
   const cards=document.querySelectorAll('.card .sub-card');
   let durationTime=document.querySelector('.audioDuration_time');
   let currentTime=document.querySelector('.audioCurrent_time');
-  const audioRange=document.querySelector('.audioRange');
-  const songTitle=document.querySelector('.song-name');
-  const audios=document.querySelectorAll('audio');
+  let audioRange=document.querySelector('.audioRange');
+   let songTitle=document.querySelector('.song-name');
+  let audios=document.querySelectorAll('audio');
   let currentAudio=null;
  for(let card=0;card<cards.length;card++){
   cards[card].onclick=()=>{
