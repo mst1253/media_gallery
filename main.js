@@ -44,7 +44,7 @@ const addImgToAudioCard=(cards,audio_cards)=>{
   cards.forEach(card=>{
    card.onclick=()=>{
       let img=card.querySelector('img');
-      let input=prompt('add a name of a card to set this image as a background to it!');
+      let input=prompt('add the name of the audio card to set this image as a background!');
     if(input!==null){
       audio_cards.forEach(audioCard=>{
        let audio_name=audioCard.querySelector('.audioName');
