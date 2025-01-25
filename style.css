@@ -12,7 +12,7 @@
    --black:black;
    --sec-clr:rgb(197, 8, 97);
    --light-black:#111;
-   --padd:1.5em;
+   --padd:1.1em;
    --size:2vh;
   }
    
@@ -311,15 +311,15 @@
     position: fixed;
     flex:1;
     bottom:0;
+    border:2px solid red;
     left:0;
     display:flex;
     justify-content:space-between;
     text-align: center;
-    height:auto;
     width:100%;
     background:var(--black);
     color:var(--white);
-    padding:var(--padd);
+    padding:.5em;
     font-size:var(--size);
     :is(footer,.song-name,.songs-control,.sound-control,.music-time,.song-repeat){
       display:flex;
@@ -405,7 +405,7 @@
       }
     }
     .music-effec{
-      display:grid;
+      display:flex;
       gap:.5em;
       .music-cycle{
        width:2.5em;
@@ -420,7 +420,8 @@
     .song-name{
       text-align: center;
       b{
-       color:white
+       color:white;
+       font-sizw:10px;
       }
   }
 }
@@ -439,12 +440,14 @@ footer{
   justify-content: center;
   align-items: center;
   width:100%;
-  gap:3em;
+  gap:2em;
+  padding-top:-10px;
   .music-time{
     display: flex;
      width:100%;
     .range_time{
       width:inherit;
+      transform:translateY(-10px)
     }
   }
     .sound-control{
