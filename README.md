@@ -1,4 +1,4 @@
-#media_gallery
+# media_gallery
 
 this project is about playing media like video/songs besides a place for images 
 
