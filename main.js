@@ -150,12 +150,10 @@ const add_music=()=>{
    </div>
   `
   let card_container=document.querySelectorAll('.audio-card');
-  //let removeAudio=card_container.querySelector('.sub-card audio');
   const cards=document.querySelectorAll('.card .sub-card');
   let durationTime=document.querySelector('.audioDuration_time');
   let currentTime=document.querySelector('.audioCurrent_time');
   let audioRange=document.querySelector('.audioRange');
-   let songTitle=document.querySelector('.song-name');
   let audios=document.querySelectorAll('audio');
   let currentAudio=null;
  for(let card=0;card<cards.length;card++){
@@ -196,9 +194,11 @@ const add_music=()=>{
 }
 
 audioInput.addEventListener('change',()=>{
-  let file=audioInput.files[0];
-  add_music();
   add_name();
+  add_music();
+  play_btn.style.display="block";
+  pause_btn.style.display="none";
+
 })
 
 const videoStyles=(videoControl,video_multimedia)=>{
@@ -245,11 +245,20 @@ playBtnVideo.onclick=()=>{
       `;   
       let videos=document.querySelectorAll('.video-card video');
       let cards=document.querySelectorAll('.video-card');
-      videos.forEach((video,index)=>{
+      videos.forEach((video)=>{
          video.volume=0;
           video.onclick=()=>{
-            mainHeader.classList.add('lazyloading')
+              mainHeader.classList.add('lazyloading');
+              let audios=document.querySelectorAll('audio');
               handleVideoClick(video);
+              audios.forEach(audio=>{
+                if(audio.played){
+                  audio.pause()
+                  play_btn.style.display="block";
+                  pause_btn.style.display="none";
+                }
+              })
+              
           };
       });
       let spans=document.querySelectorAll('.videoName');
@@ -279,7 +288,7 @@ playBtnVideo.onclick=()=>{
        mainHeader.classList.add('lazyloading')
   }
   
-  videoInput.onchange = function() {
+  videoInput.onchange = ()=> {
       let fileUrl = URL.createObjectURL(videoInput.files[0]);
       add_video(fileUrl);
       add_name()
@@ -299,10 +308,8 @@ const image_container=document.querySelector('.images-container');
           <img src="${fileUrl}" alt='image' />
           <span class='imageName'></span>
       </div>`;
-    //let img=document.querySelectorAll('.image-card img');
     let cards=document.querySelectorAll('.image-card');
     let audio_cards=document.querySelectorAll('.audio-card');
-    //audio_name=document.querySelector('.audioName');
     let spans=document.querySelectorAll('.imageName');
     if(cards.length>3){
       image_container.style.overflowY='auto';
