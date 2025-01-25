@@ -2,14 +2,14 @@
 
 this project is about playing media like video/songs besides a place for images 
 
-# the tools that been used
+#the tools that been used
 
 -html for structuring the project 
 -css for styling 
 -javascript for adding functionality to the project
 -cdn for icons 
 
-# how to use it
+#how to use it
 
 -it dosen't need sign up
 -all you need is adding files from your device to the project
