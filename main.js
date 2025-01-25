@@ -285,7 +285,6 @@ playBtnVideo.onclick=()=>{
       add_name()
   };
   document.addEventListener('DOMContentLoaded',()=>{
-    alert('click twice and move the arrow if you wanna delete an item');
     mainHeader.classList.add('lazyloading');
     setInterval(()=>mainHeader.classList.remove('lazyloading'),13000)
   })

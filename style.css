@@ -319,7 +319,7 @@
     width:100%;
     background:var(--black);
     color:var(--white);
-     padding:var(--padd);
+    padding:var(--padd);
     font-size:var(--size);
     :is(footer,.song-name,.songs-control,.sound-control,.music-time,.song-repeat){
       display:flex;
@@ -411,7 +411,6 @@
        width:2.5em;
        height:2.5em;
        border:2px solid white;
-      /*background:var(--sec-clr);*/
        border-radius:50%;
        background-position: center;
        background-repeat: no-repeat;
