@@ -18,3 +18,5 @@ this project is about playing media like video/songs besides a place for images
 -play media by clicking the card
 -you have the music part in the bottom and for videos there is a place that work as screen avobe 
 -if you want to change background of music cards just click in any image you want in the right side after you display them
+
+website in live:https://mst1253.github.io/media_gallery/
